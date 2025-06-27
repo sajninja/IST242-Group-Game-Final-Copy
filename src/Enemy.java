@@ -34,7 +34,7 @@ public class Enemy extends LivingEntity {
 
     // Patrick Jin
     public Image getSprite() {
-        // return Game.imageMap.get("monsterSprite");
+//         return Game.imageMap.get("monsterSprite");
        switch (type) {
            case BASIC:
                return Game.imageMap.get("basicSprite");
@@ -74,7 +74,7 @@ public class Enemy extends LivingEntity {
         enemy.moveTimer = new ActionTimer(new int[]{Game.random.nextInt(20) + 40, Game.random.nextInt(20) + 70});
         enemy.shootTimer = new ActionTimer(new int[]{Game.random.nextInt(10) + 30, Game.random.nextInt(10) + 45});
         enemy.setHealth(50);
-        enemy.setSize(30);
+        enemy.setSize(40);
         this.shootActions = new ArrayList<>();
         this.shootActions.add(new ShootAction(new Projectile(5, new Color(139, 197, 24), false, 7, 6), ShootType.SINGLE, 1));
         this.moveActions = new ArrayList<>();
@@ -89,7 +89,7 @@ public class Enemy extends LivingEntity {
         enemy.moveTimer = new ActionTimer(new int[]{Game.random.nextInt(20) + 60, Game.random.nextInt(20) + 80});
         enemy.shootTimer = new ActionTimer(new int[]{Game.random.nextInt(10) + 30, Game.random.nextInt(20) + 50});
         enemy.setHealth(75);
-        enemy.setSize(40);
+        enemy.setSize(60);
         this.shootActions = new ArrayList<>();
         this.shootActions.add(new ShootAction(new Projectile(20, new Color(50, 100, 0), false, 3, 30), ShootType.SINGLE, 1));
         this.shootActions.add(new ShootAction(new Projectile(5, new Color(50, 100, 0), false, 5, 10), ShootType.RING, 1));
@@ -106,7 +106,7 @@ public class Enemy extends LivingEntity {
         enemy.moveTimer = new ActionTimer(new int[]{Game.random.nextInt(20) + 40, Game.random.nextInt(20) + 70});
         enemy.shootTimer = new ActionTimer(new int[]{Game.random.nextInt(10) + 10, Game.random.nextInt(10) + 25});
         enemy.setHealth(200);
-        enemy.setSize(60);
+        enemy.setSize(80);
         this.shootActions = new ArrayList<>();
         this.shootActions.add(new ShootAction(new Projectile(10, Color.GRAY, false, 5, 8), ShootType.SINGLE, 2));
         this.shootActions.add(new ShootAction(new Projectile(20, Color.GRAY, false, 3, 12), ShootType.SINGLE, 1));
@@ -126,7 +126,7 @@ public class Enemy extends LivingEntity {
         enemy.moveTimer = new ActionTimer(new int[]{Game.random.nextInt(20) + 10, Game.random.nextInt(20) + 80});
         enemy.shootTimer = new ActionTimer(new int[]{Game.random.nextInt(5) + 10, Game.random.nextInt(5) + 16});
         enemy.setHealth(70);
-        enemy.setSize(28);
+        enemy.setSize(40);
         this.shootActions = new ArrayList<>();
         this.shootActions.add(new ShootAction(new Projectile(7, Color.MAGENTA, false, 8, 6), ShootType.SINGLE, 5));
         this.shootActions.add(new ShootAction(new Projectile(8, Color.MAGENTA, false, 8, 8), ShootType.SINGLE, 4));

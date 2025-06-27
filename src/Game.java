@@ -202,39 +202,13 @@ public class Game extends JFrame implements KeyListener {
 
         int x = random.nextInt(800) - 400;
         int y = random.nextInt(800) - 400;
-
+        nonPlayerObjects.add(new Enemy(EnemyType.TANK, new Vector2(x, y), player));
         if (level % 5 == 0) {
                 int bosses = level / 5;
                 for (int j = 0; j < bosses; j++) {
-            nonPlayerObjects.add(new Enemy(EnemyType.TANK, new Vector2(x, y), player));
+
                 }
         }
-
-//        switch (level) {
-//            case 1:
-//                nonPlayerObjects.add(new Enemy(EnemyType.BASIC, new Vector2(200, 200), player));
-//                nonPlayerObjects.add(new Enemy(EnemyType.BASIC, new Vector2(400, 200), player));
-//                break;
-//            case 2:
-//                nonPlayerObjects.add(new Enemy(EnemyType.BASIC, new Vector2(200, 200), player));
-//                nonPlayerObjects.add(new Enemy(EnemyType.STRONG, new Vector2(400, 200), player));
-//                break;
-//            case 3:
-//                nonPlayerObjects.add(new Enemy(EnemyType.RANGED, new Vector2(150, 200), player));
-//                nonPlayerObjects.add(new Enemy(EnemyType.BASIC, new Vector2(350, 200), player));
-//                nonPlayerObjects.add(new Enemy(EnemyType.STRONG, new Vector2(550, 200), player));
-//                break;
-//            case 4:
-//                nonPlayerObjects.add(new Enemy(EnemyType.TANK, new Vector2(300, 250), player));
-//                nonPlayerObjects.add(new Enemy(EnemyType.RANGED, new Vector2(500, 200), player));
-//                break;
-//            default:
-//                for (int i = 0; i < level; i++) {
-//                    EnemyType type = EnemyType.values()[random.nextInt(EnemyType.values().length)];
-//                    nonPlayerObjects.add(new Enemy(type, new Vector2(100 + i * 100, 150), player));
-//                }
-//                break;
-//        }
     }
 
     void draw(Graphics g) {
@@ -445,7 +419,7 @@ public class Game extends JFrame implements KeyListener {
                 if (!p.isFriendly()) {
                     double distanceToPlayer = new Vector2(p.getPosition().getX() - (player.getTruePosition().getX()), p.getPosition().getY() - (player.getTruePosition().getY())).magnitude();
                     if (distanceToPlayer < player.getSize().magnitude() * 0.65) {
-//                        player.hit(p);
+                        player.hit(p);
                         playSound("playerDamage.wav");
                         if (player.getHealth() < 0) {
                             gameOver = true;
