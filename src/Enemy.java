@@ -34,19 +34,19 @@ public class Enemy extends LivingEntity {
 
     // Patrick Jin
     public Image getSprite() {
-        return Game.imageMap.get("monsterSprite");
-//        switch (type) {
-//            case BASIC:
-//                return Game.imageMap.get("basic");
-//            case STRONG:
-//                return Game.imageMap.get("strong");
-//            case RANGED:
-//                return Game.imageMap.get("ranged");
-//            case TANK:
-//                return Game.imageMap.get("tank");
-//            default:
-//                return null;
-//        }
+        // return Game.imageMap.get("monsterSprite");
+       switch (type) {
+           case BASIC:
+               return Game.imageMap.get("basic");
+           case STRONG:
+               return Game.imageMap.get("strong");
+           case RANGED:
+               return Game.imageMap.get("ranged");
+           case TANK:
+               return Game.imageMap.get("tank");
+           default:
+               return null;
+       }
     }
 
     public ArrayList<Projectile> shootProjectile() {
