@@ -37,13 +37,13 @@ public class Enemy extends LivingEntity {
         // return Game.imageMap.get("monsterSprite");
        switch (type) {
            case BASIC:
-               return Game.imageMap.get("basic");
+               return Game.imageMap.get("basicSprite");
            case STRONG:
-               return Game.imageMap.get("strong");
+               return Game.imageMap.get("strongSprite");
            case RANGED:
-               return Game.imageMap.get("ranged");
+               return Game.imageMap.get("rangedSprite");
            case TANK:
-               return Game.imageMap.get("tank");
+               return Game.imageMap.get("tankSprite");
            default:
                return null;
        }
