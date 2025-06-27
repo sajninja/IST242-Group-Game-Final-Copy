@@ -202,12 +202,11 @@ public class Game extends JFrame implements KeyListener {
 
         int x = random.nextInt(800) - 400;
         int y = random.nextInt(800) - 400;
-        nonPlayerObjects.add(new Enemy(EnemyType.TANK, new Vector2(x, y), player));
         if (level % 5 == 0) {
-                int bosses = level / 5;
-                for (int j = 0; j < bosses; j++) {
-
-                }
+            int bosses = level / 5;
+            for (int j = 0; j < bosses; j++) {
+                nonPlayerObjects.add(new Enemy(EnemyType.TANK, new Vector2(x, y), player));
+            }
         }
     }
 
